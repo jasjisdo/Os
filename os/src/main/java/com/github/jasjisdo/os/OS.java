@@ -23,6 +23,23 @@ import java.io.File;
  */
 public class OS {
 
+    public enum NAME {
+
+        WINDOWS("win"),
+        MACOS("mac"),
+        SOLARIS("sunos"),
+        LINUX("linux"),
+        UNIX("unix"),
+        UNKNOWN("");
+
+        private final String indicator;
+
+        NAME(String indicator) {
+            this.indicator = indicator;
+        }
+
+    }
+
     /**
      * @return
      */
@@ -129,21 +146,5 @@ public class OS {
         if (OS.name().equals(NAME.WINDOWS)) System.out.println(OS.system("sc", "query"));
     }
 
-    public static enum NAME {
-
-        WINDOWS("win"),
-        MACOS("mac"),
-        SOLARIS("sunos"),
-        LINUX("linux"),
-        UNIX("unix"),
-        UNKNOWN("");
-
-        private final String indicator;
-
-        NAME(String indicator) {
-            this.indicator = indicator;
-        }
-
-    }
 }
 
